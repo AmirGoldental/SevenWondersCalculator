@@ -1,113 +1,115 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>7 Wonders Calculator</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico" />
-		<link rel="stylesheet" href="css/style.css">
-		
-		<link rel="manifest" href="/manifest.json">
-		<link rel="apple-touch-icon" href="images/favicon.ico">
-		<meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
-		<meta name="theme-color" content="#FFE1C4">
-		<script src="/assets/js/app.js"></script>
-	</head>
 
-	<body>
+<head>
+	<meta charset="utf-8">
+	<title>7 Wonders Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico" />
+	<link rel="stylesheet" href="css/style.css">
 
-		<div class="wrapper" style="background-image: url('images/BackGround.svg'); ">
-			<div class="inner" align="center" id="Points">
-				<form action="">
-					<h3>Calculate your points:</h3>
-					<div class="form-group">
-						<div class="form-wrapper">
-							<label for="">Military</label>
-							<input type="number" class="form-control" value=0 onfocus="this.value=''">
-						</div>
-						<div class="form-wrapper">
-							<label for="">Wonders</label>
-							<input type="number" class="form-control" value=0 onfocus="this.value=''">
-						</div>
-					</div>
+	<link rel="manifest" href="manifest.json">
+	<link rel="apple-touch-icon" href="images/favicon.ico">
+	<meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+	<meta name="theme-color" content="#FFE1C4">
+	<script src="/assets/js/app.js"></script>
+</head>
+
+<body>
+
+	<div class="wrapper" style="background-image: url('images/BackGround.svg'); ">
+		<div class="inner" align="center" id="Points">
+			<form action="">
+				<h3>Calculate your points:</h3>
+				<div class="form-group">
 					<div class="form-wrapper">
-						<label for="">Points from coins (coins/3):</label>
+						<label for="">Military</label>
 						<input type="number" class="form-control" value=0 onfocus="this.value=''">
 					</div>
-					<div class="form-group">
-						<div class="form-wrapper">
-							<label for="">Blue cards:</label>
-							<input type="number" class="form-control" value=0 onfocus="this.value=''">
-						</div>
-						<div class="form-wrapper">
-							<label for="">Yellow cards:</label>
-							<input type="number" class="form-control" value=0 onfocus="this.value=''">
-						</div>
+					<div class="form-wrapper">
+						<label for="">Wonders</label>
+						<input type="number" class="form-control" value=0 onfocus="this.value=''">
+					</div>
+				</div>
+				<div class="form-wrapper">
+					<label for="">Points from coins (coins/3):</label>
+					<input type="number" class="form-control" value=0 onfocus="this.value=''">
+				</div>
+				<div class="form-group">
+					<div class="form-wrapper">
+						<label for="">Blue cards:</label>
+						<input type="number" class="form-control" value=0 onfocus="this.value=''">
 					</div>
 					<div class="form-wrapper">
-						<label for="" align="center">Science</label>
+						<label for="">Yellow cards:</label>
+						<input type="number" class="form-control" value=0 onfocus="this.value=''">
 					</div>
-					<div class="form-group">
-						<div class="form-wrapper">
-							<label for="">Type A:</label>
-							<input type="number" class="form-control" id="Science" value=0 onfocus="this.value=''">
-							 
-						</div>
-						<div class="form-wrapper">
-							<label for="">Type B:</label>
-							<input type="number" class="form-control" id="Science" value=0 onfocus="this.value=''">
-						</div>
-						<div class="form-wrapper">
-							<label for="">Type C:</label>
-							<input type="number" class="form-control" id="Science" value=0 onfocus="this.value=''">
-						</div>
+				</div>
+				<div class="form-wrapper">
+					<label for="" align="center">Science</label>
+				</div>
+				<div class="form-group">
+					<div class="form-wrapper">
+						<label for="">Type A:</label>
+						<input type="number" class="form-control" id="Science" value=0 onfocus="this.value=''">
+
 					</div>
-					<div class="form-group">
-						<div class="form-wrapper">
-							<label for="">Guilds</label>
-							<input type="number" class="form-control" value=0 onfocus="this.value=''">
-						</div>
-						<div class="form-wrapper">
-							<label for="">Other</label>
-							<input type="number" class="form-control" value=0 onfocus="this.value=''">
-						</div>
+					<div class="form-wrapper">
+						<label for="">Type B:</label>
+						<input type="number" class="form-control" id="Science" value=0 onfocus="this.value=''">
 					</div>
-					<div class="checkbox">
-						<label>
-							<input type="checkbox" font-family="Muli-Bold" disabled> I accept that I am not an idiot.
-							<span class="checkmark"></span>
-						</label>
+					<div class="form-wrapper">
+						<label for="">Type C:</label>
+						<input type="number" class="form-control" id="Science" value=0 onfocus="this.value=''">
 					</div>
-					<button onclick="Calculate()">Calculate</button>
-				</form>
-			</div>
+				</div>
+				<div class="form-group">
+					<div class="form-wrapper">
+						<label for="">Guilds</label>
+						<input type="number" class="form-control" value=0 onfocus="this.value=''">
+					</div>
+					<div class="form-wrapper">
+						<label for="">Other</label>
+						<input type="number" class="form-control" value=0 onfocus="this.value=''">
+					</div>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" font-family="Muli-Bold" disabled> I accept that I am not an idiot.
+						<span class="checkmark"></span>
+					</label>
+				</div>
+				<button onclick="Calculate()">Calculate</button>
+			</form>
 		</div>
-		
-<script>
-function Calculate() {
-  var text = "";
-  var form_inputs = document.getElementsByClassName("form-control");
-  var total_points = 0;
-  var min_science = 0;
-  for (var i=0; i<form_inputs.length; i++){
-	if (form_inputs[i].id == "Science"){
-		min_science = (min_science, Number(form_inputs[i].value));
-		total_points = total_points + Math.pow(Number(form_inputs[i].value),2);
-		text += " + " + form_inputs[i].value + "^2";
-	} else{
-		total_points = total_points + Number(form_inputs[i].value);	
-		if (text == ""){
-			text += form_inputs[i].value;
-		} else {
-			text += " + " + form_inputs[i].value;
+	</div>
+
+	<script>
+		function Calculate() {
+			var text = "";
+			var form_inputs = document.getElementsByClassName("form-control");
+			var total_points = 0;
+			var min_science = 0;
+			for (var i = 0; i < form_inputs.length; i++) {
+				if (form_inputs[i].id == "Science") {
+					min_science = (min_science, Number(form_inputs[i].value));
+					total_points = total_points + Math.pow(Number(form_inputs[i].value), 2);
+					text += " + " + form_inputs[i].value + "^2";
+				} else {
+					total_points = total_points + Number(form_inputs[i].value);
+					if (text == "") {
+						text += form_inputs[i].value;
+					} else {
+						text += " + " + form_inputs[i].value;
+					}
+				}
+			}
+			total_points = total_points + min_science * 7;
+			text += " + " + min_science + "*7";
+			text += "\nYou have: " + total_points + " points!"
+			alert(text)
 		}
-	}
-  }
-  total_points = total_points + min_science*7;
-  text += " + " + min_science + "*7";
-  text +=  "\nYou have: " + total_points + " points!"
-  alert(text)
-}
-</script>
-	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+	</script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
 </html>
