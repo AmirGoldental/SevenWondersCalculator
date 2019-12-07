@@ -8,17 +8,7 @@
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "/assets/images/logo-72x72.png",
-            "type": "image/png",
-            "sizes": "72x72"
-        },
-        {
-            "src": "/assets/images/logo-96x96.png",
-            "type": "image/png",
-            "sizes": "96x96"
-        },
-        {
-            "src": "/images/logo-128x128.png",
+            "src": "images/logo-128x128.png",
             "type": "image/png",
             "sizes": "128x128"
         },
