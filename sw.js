@@ -1,16 +1,15 @@
 const staticCacheName = 'site-static-content';
 const assets = [
-    '/',
-    '/index.html',
-    '/css/style.css',
-    '/images/favicon.ico',
-    '/images/logo-512x512.png',
-    '/images/logo-128x128.png',
-    '/images/logo.png',
-    '/images/BackGround.svg',
-    '/fonts/Muli-Bold.ttf',
-    '/fonts/Muli-Regular.ttf',
-    '/fonts/Muli-SemiBold.ttf',
+    'index.html',
+    'css/style.css',
+    'images/favicon.ico',
+    'images/logo-512x512.png',
+    'images/logo-128x128.png',
+    'images/logo.png',
+    'images/BackGround.svg',
+    'fonts/Muli-Bold.ttf',
+    'fonts/Muli-Regular.ttf',
+    'fonts/Muli-SemiBold.ttf',
 ];
 // install event
 self.addEventListener('install', evt => {
