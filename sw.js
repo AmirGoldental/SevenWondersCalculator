@@ -7,6 +7,7 @@ self.addEventListener('install', e => {
                 'css/style.css',
                 'images/favicon.ico',
                 'images/logo-512x512.png',
+                'images/logo-192x192.png',
                 'images/logo-128x128.png',
                 'images/logo.png',
                 'images/BackGround.svg',
