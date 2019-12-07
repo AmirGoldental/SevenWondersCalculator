@@ -1,7 +1,7 @@
 {
     "name": "7 Wonders Calculator",
     "short_name": "SevenWonders",
-    "start_url": "/index.html",
+    "start_url": "index.html",
     "display": "standalone",
     "background_color": "#FFE1C4",
     "theme_color": "#FFE1C4",
