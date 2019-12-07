@@ -1,5 +1,4 @@
-const version = "0.6.18";
-const cacheName = `airhorner-${version}`;
+const cacheName = `Amir_cache`;
 self.addEventListener('install', e => {
     e.waitUntil(
         caches.open(cacheName).then(cache => {
