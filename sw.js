@@ -15,6 +15,8 @@ self.addEventListener('install', e => {
                 'fonts/Muli-Bold.ttf',
                 'fonts/Muli-Regular.ttf',
                 'fonts/Muli-SemiBold.ttf',
+                'app.js',
+                'sw.js',
             ])
                 .then(() => self.skipWaiting());
         })
