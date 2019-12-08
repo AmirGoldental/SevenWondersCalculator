@@ -89,7 +89,7 @@
 			var text = "";
 			var form_inputs = document.getElementsByClassName("form-control");
 			var total_points = 0;
-			var min_science = 0;
+			var min_science = 9999;
 			for (var i = 0; i < form_inputs.length; i++) {
 				if (form_inputs[i].id == "Science") {
 					min_science = Math.min(min_science, Number(form_inputs[i].value));
