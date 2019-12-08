@@ -46,7 +46,10 @@ a:hover {
   align-items: center;}
 
 .inner {
-  width: 90%;
+  height: auto;
+  width: auto;
+  max-width: 90%;
+  max-height: 90%;
   margin: auto;
   padding-top: 0px;
   padding-bottom: 0px; 
