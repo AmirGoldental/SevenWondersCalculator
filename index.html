@@ -90,7 +90,7 @@
 			var form_inputs = document.getElementsByClassName("form-control");
 			var total_points = 0;
 			var min_science = 9999;
-			for (my_input_field of form_inputs.length) {
+			for (my_input_field of form_inputs) {
 				if (my_input_field.id == "Science") {
 					min_science = Math.min(min_science, Number(my_input_field.value));
 					total_points = total_points + Math.pow(Number(my_input_field.value), 2);
