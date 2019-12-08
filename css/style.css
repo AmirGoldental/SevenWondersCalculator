@@ -44,9 +44,7 @@ a:hover {
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  align-items: center;
-  padding-left:2%;
-  padding-right:2%; }
+  align-items: center;}
 
 .inner {
   min-width: 850px;
