@@ -30,7 +30,8 @@ img {
   max-width: 100%; }
 
 ul {
-  margin-bottom: 0; }
+  margin-top: 0;
+  margin-bottom: 0;  }
 
 a:hover {
   text-decoration: none; }
@@ -60,14 +61,14 @@ a:hover {
     font-size: 22px;
     font-family: "Muli-Bold";
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 3%;
     color: #333;
     letter-spacing: 2px; }
 
 form {
   width: 80%;
-  padding-bottom: 20px;
-  padding-top: 20px;}
+  padding-bottom: 5%;
+  padding-top: 5%;}
 
 .form-group {
   display: flex; }
@@ -75,9 +76,9 @@ form {
     width: 50%; }
 
 .form-wrapper {
-  margin-bottom: 10px; }
+  margin-bottom: 2%; }
   .form-wrapper label {
-    margin-bottom: 5px;
+    margin-bottom: 1%;
     display: block;
 	font-family: "Muli-Bold"; 
 	}
@@ -104,7 +105,7 @@ select {
 
 button {
   border: none;
-  width: 152px;
+  width: 90%;
   height: 40px;
   margin: auto;
   margin-top: 29px;
@@ -162,7 +163,6 @@ button {
 .checkbox {
   position: relative; }
   .checkbox label {
-    padding-left: 22px;
     cursor: pointer; }
   .checkbox input {
     position: absolute;
@@ -188,15 +188,14 @@ button {
   .checkmark:after {
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     display: none;
     content: '\f26b'; }
 
-@media (max-width: 991px) {
+@media (max-width: 100%) {
   .inner {
-    min-width: 768px; } }
-@media (max-width: 767px) {
+    min-width: 90%; } }
+@media (max-width: 100%) {
   .inner {
     min-width: auto;
     padding-top: 0;
@@ -204,7 +203,7 @@ button {
 
   form {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px; } }
+    padding-right: 5%;
+    padding-left: 5%; } }
 
 /*# sourceMappingURL=style.css.map */
