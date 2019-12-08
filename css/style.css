@@ -46,7 +46,7 @@ a:hover {
   align-items: center;}
 
 .inner {
-  min-width: 850px;
+  width: 90%;
   margin: auto;
   padding-top: 0px;
   padding-bottom: 0px; 
