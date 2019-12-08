@@ -16,6 +16,7 @@ self.addEventListener('install', e => {
                 'fonts/Muli-SemiBold.ttf',
                 'app.js',
                 'sw.js',
+                'manifest.json',
             ])
                 .then(() => self.skipWaiting());
         })
@@ -33,8 +34,33 @@ self.addEventListener('fetch', event => {
             .then(response => {
                 return response || fetch(event.request);
             })
+    )
+    caches.open(cacheName).then(cache => {
+        fetch(event.request).then(response => {
+            if (response) {
+                cache.put(event.request, response.clone());
+                console.log("updated cache");
+            }
+        }).catch(_ => {
+            console.log("No network");
+        });
+    }
     );
 });
 
+
+//self.addEventListener('fetch', event => {
+//    event.respondWith(
+//        caches.open(cacheName)
+//            .then(cache =>
+//                caches.match(event.request).then(response => {
+//                    if (response) return response
+//                    fetch(event.request).then(response => {
+//                        cache.put(event.request, response.clone());
+//                        return response;
+//                    });
+//                })
+//            ));
+//});
 
 
