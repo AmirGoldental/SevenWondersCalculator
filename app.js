@@ -8,16 +8,7 @@ function ResetForm() {
     window.location.reload(false);
 }
 
-// install button:
-window.addEventListener('load', function () {
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-        console.log('app runs in standalone mode');
-        document.getElementsByName("install_button_div")[0].style.display = "none";
-    } else {
-        console.log('app runs in browser');
-        document.getElementsByName("install_button_div")[0].style.display = "block";
-    }
-})
+
 
 
 let deferredPrompt = null;
@@ -27,24 +18,29 @@ window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
-});
+    // Show install button:
+    window.addEventListener('load', function () {
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+            console.log('app runs in standalone mode');
+            document.getElementsByName("install_button_div")[0].style.display = "none";
+        } else {
+            console.log('app runs in browser');
+            document.getElementsByName("install_button_div")[0].style.display = "block";
+        }
 
-async function install() {
-    if (deferredPrompt) {
-        deferredPrompt.prompt();
-        console.log(deferredPrompt)
-        deferredPrompt.userChoice.then(function (choiceResult) {
-
-            if (choiceResult.outcome === 'accepted') {
-                console.log('Your PWA has been installed');
-            } else {
-                console.log('User chose to not install your PWA');
-            }
-
-            deferredPrompt = null;
-
+        document.getElementsByName("install_button")[0].addEventListener('click', (e) => {
+            // Show the prompt
+            deferredPrompt.prompt();
+            // Wait for the user to respond to the prompt
+            deferredPrompt.userChoice
+                .then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the A2HS prompt');
+                    } else {
+                        console.log('User dismissed the A2HS prompt');
+                    }
+                    deferredPrompt = null;
+                });
         });
-
-
-    }
-}
+    })
+});

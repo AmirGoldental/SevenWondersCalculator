@@ -1,5 +1,6 @@
 {
     "name": "7 Wonders Calculator",
+    "prefer_related_applications": false,
     "short_name": "SevenWonders",
     "start_url": "index.html",
     "display": "standalone",
