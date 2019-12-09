@@ -3,7 +3,7 @@
     "short_name": "SevenWonders",
     "start_url": "index.html",
     "display": "standalone",
-    "background_color": "#FFE1C4",
+    "background_color": "#b3d9ff",
     "theme_color": "#b3d9ff",
     "orientation": "portrait-primary",
     "icons": [
