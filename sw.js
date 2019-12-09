@@ -27,48 +27,18 @@ self.addEventListener('activate', event => {
     event.waitUntil(self.clients.claim());
 });
 
+//Stale-while-revalidate
 self.addEventListener('fetch', function (event) {
     event.respondWith(
-        fetch(event.request).catch(function () {
-            return caches.match(event.request);
+        caches.open('mysite-dynamic').then(function (cache) {
+            return cache.match(event.request).then(function (response) {
+                var fetchPromise = fetch(event.request).then(function (networkResponse) {
+                    cache.put(event.request, networkResponse.clone());
+                    return networkResponse;
+                })
+                return response || fetchPromise;
+            })
         })
     );
 });
-
-//self.addEventListener('fetch', event => {
-//    event.respondWith(
-//        caches.open(cacheName)
-//            .then(cache => cache.match(event.request, { ignoreSearch: true }))
-//            .then(response => {
-//                return response || fetch(event.request);
-//            })
-//    )
-//    caches.open(cacheName).then(cache => {
-//        fetch(event.request).then(response => {
-//            if (response) {
-//                cache.put(event.request, response.clone());
-//                console.log("updated cache");
-//            }
-//        }).catch(_ => {
-//            console.log("No network");
-//        });
-//    }
-//    );
-//});
-
-
-//self.addEventListener('fetch', event => {
-//    event.respondWith(
-//        caches.open(cacheName)
-//            .then(cache =>
-//                caches.match(event.request).then(response => {
-//                    if (response) return response
-//                    fetch(event.request).then(response => {
-//                        cache.put(event.request, response.clone());
-//                        return response;
-//                    });
-//                })
-//            ));
-//});
-
 
