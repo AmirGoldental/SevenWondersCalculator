@@ -86,7 +86,6 @@ form {
   margin-bottom: 2%; }
   .form-wrapper label {
     margin-bottom: 1%;
-    display: block;
 	font-family: "Muli-Bold"; 
 	}
 
@@ -178,9 +177,7 @@ button {
 #install_button:before{
   background: #4696ff;
 }
-#install_button_div{
-  display:"none"
-}
+
 
 form {
   width: 100%;
