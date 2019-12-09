@@ -84,23 +84,19 @@
 						<input type="number" class="form-control" id="Science" value=0 onfocus="this.value=''">
 					</div>
 				</div>
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" font-family="Muli-Bold" disabled> I accept that I am not an idiot.
-						(Optional)
-						<span class="checkmark"></span>
-					</label>
-				</div>
 				<div class="form-group">
 					<div class="form-wrapper">
-						<button id="CalculateButton" onclick="Calculate(); return false;">Calculate</button>
+						<button id="calculate_button" onclick="Calculate(); return false;">Calculate</button>
 					</div>
 					<div class="form-wrapper">
 						<button onclick="ResetForm(); return false;">Reset Form</button>
 					</div>
 				</div>
+				<div class="form-wrapper" name="install_button_div" display="none">
+					<button id="install_button" onclick="install(); return false;">Install App</button>
+				</div>
 				<div class="form-wrapper">
-					<label for="" align="center">Version 3.5!</label>
+					<label for="" align="center">Version 4.0!</label>
 				</div>
 			</form>
 		</div>
