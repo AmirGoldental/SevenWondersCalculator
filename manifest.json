@@ -4,13 +4,18 @@
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#FFE1C4",
-    "theme_color": "#FFE1C4",
+    "theme_color": "#b3d9ff",
     "orientation": "portrait-primary",
     "icons": [
         {
             "src": "images/logo-128x128.png",
             "type": "image/png",
             "sizes": "128x128"
+        },
+        {
+            "src": "images/logo-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
         },
         {
             "src": "images/logo-512x512.png",

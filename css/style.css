@@ -56,6 +56,13 @@ a:hover {
   padding-bottom: 0px; 
   background-color: rgba(255, 255, 255, 0.5);
   }
+  .inner h4 {
+    font-size: 15px;
+    font-family: "Muli-Bold";
+    text-align: center;
+    margin-top: 3%;
+    color: #333;
+    letter-spacing: 2px; }
   .inner h3 {
     text-transform: uppercase;
     font-size: 22px;
@@ -108,6 +115,7 @@ button {
   width: 90%;
   height: 40px;
   margin: auto;
+  margin-bottom: 5px;
   margin-top: 15px;
   cursor: pointer;
   display: flex;
@@ -161,8 +169,11 @@ button {
   background: #18c00c;
 }
 .checkbox {
+  text-align: left;
+  padding-left: 20px;
   padding-top: 5px;
   padding-bottom: 0px;
+	font-family: "Muli-Bold"; 
   position: relative; }
   .checkbox label {
     cursor: pointer; }
@@ -175,7 +186,7 @@ button {
 
 .checkmark {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 0;
   transform: translateY(-50%);
   height: 12px;
@@ -190,22 +201,11 @@ button {
   .checkmark:after {
     position: absolute;
     top: 50%;
-    transform: translate(-50%, -50%);
     display: none;
     content: '\f26b'; }
-
-@media (max-width: 100%) {
-  .inner {
-    min-width: 90%; } }
-@media (max-width: 100%) {
-  .inner {
-    min-width: auto;
-    padding-top: 0;
-    padding-bottom: 0; }
 
   form {
     width: 100%;
     padding-right: 5%;
     padding-left: 5%; } }
 
-/*# sourceMappingURL=style.css.map */
