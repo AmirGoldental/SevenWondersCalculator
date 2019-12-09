@@ -1,6 +1,3 @@
-importScripts('/sw-offline-google-analytics/offline-google-analytics-import.js');
-goog.offlineGoogleAnalytics.initialize();
-
 const cacheName = `Amir_cache`;
 self.addEventListener('install', e => {
     e.waitUntil(
