@@ -27,26 +27,34 @@ self.addEventListener('activate', event => {
     event.waitUntil(self.clients.claim());
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', function (event) {
     event.respondWith(
-        caches.open(cacheName)
-            .then(cache => cache.match(event.request, { ignoreSearch: true }))
-            .then(response => {
-                return response || fetch(event.request);
-            })
-    )
-    caches.open(cacheName).then(cache => {
-        fetch(event.request).then(response => {
-            if (response) {
-                cache.put(event.request, response.clone());
-                console.log("updated cache");
-            }
-        }).catch(_ => {
-            console.log("No network");
-        });
-    }
+        fetch(event.request).catch(function () {
+            return caches.match(event.request);
+        })
     );
 });
+
+//self.addEventListener('fetch', event => {
+//    event.respondWith(
+//        caches.open(cacheName)
+//            .then(cache => cache.match(event.request, { ignoreSearch: true }))
+//            .then(response => {
+//                return response || fetch(event.request);
+//            })
+//    )
+//    caches.open(cacheName).then(cache => {
+//        fetch(event.request).then(response => {
+//            if (response) {
+//                cache.put(event.request, response.clone());
+//                console.log("updated cache");
+//            }
+//        }).catch(_ => {
+//            console.log("No network");
+//        });
+//    }
+//    );
+//});
 
 
 //self.addEventListener('fetch', event => {
