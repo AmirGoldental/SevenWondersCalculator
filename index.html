@@ -96,7 +96,7 @@
 					<button id="install_button" onclick="install(); return false;">Install App</button>
 				</div>
 				<div class="form-wrapper">
-					<label for="" align="center">Version 4.0!</label>
+					<label for="" align="center">Version 4.5!</label>
 				</div>
 			</form>
 		</div>
@@ -129,17 +129,12 @@
 		text += "\nYou have: " + total_points + " points!"
 		alert(text)
 
-		if (navigator.canShare) {
-			navigator.share({
-				files: [],
-				title: 'My Points',
-				text: text,
-			})
-				.then(() => console.log('Share was successful.'))
-				.catch((error) => console.log('Sharing failed', error));
-		} else {
-			console.log(`Your system doesn't support sharing files.`);
-		}
+		navigator.share({
+			files: [],
+			title: 'My Points',
+			text: text,
+		}).then(() => console.log('Share was successful.')).catch((error) =>
+			console.log('Sharing failed', error));
 		return false;
 	}
 </script>
