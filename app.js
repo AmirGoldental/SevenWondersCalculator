@@ -6,9 +6,4 @@ if ('serviceWorker' in navigator) {
 
 function ResetForm() {
     window.location.reload(false);
-    //var form_inputs = document.getElementsByClassName("form-control");
-    //for (my_input_field of form_inputs) {
-    //    my_input_field.value = 0;
-    //}
-
 }
