@@ -13,6 +13,21 @@ function ResetForm() {
 
 let deferredPrompt = null;
 
+function InatallClick() {
+    // Show the prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice
+        .then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the A2HS prompt');
+            } else {
+                console.log('User dismissed the A2HS prompt');
+            }
+            deferredPrompt = null;
+        });
+}
+
 window.addEventListener('load', function () {
     if (window.matchMedia('(display-mode: standalone)').matches) {
         console.log('app runs in standalone mode');
@@ -37,20 +52,5 @@ window.addEventListener('beforeinstallprompt', (e) => {
             console.log('app runs in browser');
             document.getElementsByName("install_button_div")[0].style.display = "block";
         }
-
-        document.getElementsByName("install_button")[0].addEventListener('click', (e) => {
-            // Show the prompt
-            deferredPrompt.prompt();
-            // Wait for the user to respond to the prompt
-            deferredPrompt.userChoice
-                .then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('User accepted the A2HS prompt');
-                    } else {
-                        console.log('User dismissed the A2HS prompt');
-                    }
-                    deferredPrompt = null;
-                });
-        });
     })
 });
