@@ -29,16 +29,22 @@ self.addEventListener('activate', event => {
 
 //Stale-while-revalidate
 self.addEventListener('fetch', function (event) {
-    event.respondWith(
-        caches.open('mysite-dynamic').then(function (cache) {
-            return cache.match(event.request).then(function (response) {
-                var fetchPromise = fetch(event.request).then(function (networkResponse) {
-                    cache.put(event.request, networkResponse.clone());
-                    return networkResponse;
+    var req = event.request.clone();
+    if (req.clone().method == "GET") {
+        event.respondWith(
+            // Get the response from the cache
+            caches.open('mysite-dynamic').then(function (cache) {
+                return cache.match(event.request).then(function (response) {
+                    // Get the response from the network
+                    var fetchPromise = fetch(event.request).then(function (networkResponse) {
+                        // And store it in the cache for later
+                        cache.put(event.request, networkResponse.clone());
+                        return networkResponse;
+                    })
+                    return response || fetchPromise;
                 })
-                return response || fetchPromise;
             })
-        })
-    );
+        );
+    }
 });
 
