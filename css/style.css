@@ -108,7 +108,7 @@ button {
   width: 90%;
   height: 40px;
   margin: auto;
-  margin-top: 29px;
+  margin-top: 15px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -161,6 +161,8 @@ button {
   background: #18c00c;
 }
 .checkbox {
+  padding-top: 5px;
+  padding-bottom: 0px;
   position: relative; }
   .checkbox label {
     cursor: pointer; }
