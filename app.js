@@ -8,7 +8,7 @@ var captionText = document.getElementById("caption");
 img.onclick = function(){
   modal.style.display = "block";
   modalImg.src = "images/Rules.png";
-  Return false;
+  return false;
 }
 
 // Get the <span> element that closes the modal
