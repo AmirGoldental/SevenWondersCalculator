@@ -185,43 +185,7 @@ form {
   padding-left: 5%; } 
 
 
-How TO - Modal Images
-Learn how to create responsive Modal Images with CSS and JavaScript.
 
-Modal Image
-A modal is a dialog box/popup window that is displayed on top of the current page.
-
-This example use most of the code from the previous example, Modal Boxes, only in this example, we use images.
-
-Snow
-
-Step 1) Add HTML:
-Example
-<!-- Trigger the Modal -->
-<img id="myImg" src="img_snow.jpg" alt="Snow" style="width:100%;max-width:300px">
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- The Close Button -->
-  <span class="close">&times;</span>
-
-  <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img01">
-
-  <!-- Modal Caption (Image Text) -->
-  <div id="caption"></div>
-</div>
-Step 2) Add CSS:
-Example
-/* Style the Image Used to Trigger the Modal */
-#myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#myImg:hover {opacity: 0.7;}
 
 /* The Modal (background) */
 .modal {
