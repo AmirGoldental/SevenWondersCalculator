@@ -15,6 +15,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
+
 	<meta charset="utf-8">
 	<title>7 Wonders Calculator</title>
 	<link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico" />
@@ -94,19 +96,19 @@
 						<button id="calculate_button" onclick="Calculate(); return false;">Calculate</button>
 					</div>
 					<div class="form-wrapper">
-						<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-							data-target="#myModal">Rules</button>
+						<button id="rules_button" data-toggle="modal" data-target="#myModal"
+							onclick="return false;">Rules</button id="calculate_button">
 					</div>
 					<div class="form-wrapper">
 						<button onclick="ResetForm(); return false;">Reset Form</button>
 					</div>
 				</div>
 				<div class="form-wrapper" style="display: none" name="install_button_div">
-					<button id="myImg" name="install_button" onclick="InatallClick(); return false;">Install
+					<button id="install_button" name="install_button" onclick="InatallClick(); return false;">Install
 						App</button>
 				</div>
 				<div class="form-wrapper">
-					<label for="" align="center">Version 5.30!</label>
+					<label for="" align="center">Version 6.00!</label>
 				</div>
 			</form>
 		</div>
@@ -176,25 +178,41 @@
 		text += "\nScience combo:" + min_science + "*7";
 		text += "\nYou have: " + total_points + " points!"
 		alert(text)
-
-		navigator.share({
-			files: [],
-			title: 'My Points',
-			text: text,
-		}).then(() => console.log('Share was successful.')).catch((error) =>
-			console.log('Sharing failed', error));
+		try {
+			navigator.share({
+				files: [],
+				title: 'My Points',
+				text: text,
+			}).then(() => console.log('Share was successful.')).catch((error) =>
+				console.log('Sharing failed', error));
+		}
+		catch (error) {
+			console.log('Sharing failed', error);
+		}
 		return false;
 	}
-	$('.tab-pane').on('click', function () {
-		console.log('JQUERT EVENT');
-		var next = jQuery('.nav-tabs > .active').next('li');
-		if (next.length) {
-			next.find('a').trigger('click');
-		} else {
-			jQuery('#myTabs a:first').tab('show');
-		}
-	});
 
+	$(".tab-pane").swipe({
+		swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+			if (direction == 'left') {
+				var next = jQuery('.nav-tabs > .active').next('li');
+				if (next.length) {
+					next.find('a').trigger('click');
+				} else {
+					jQuery('.nav-tabs a:first').tab('show');
+				}
+			}
+			if (direction == 'right') {
+				var next = jQuery('.nav-tabs > .active').prev('li');
+				if (next.length) {
+					next.find('a').trigger('click');
+				} else {
+					jQuery('.nav-tabs a:last').tab('show');
+				}
+			}
+		},
+		allowPageScroll: "vertical"
+	});
 
 </script>
 

@@ -78,14 +78,16 @@ form {
   padding-top: 5%;}
 
 .form-group {
-  display: flex; }
+  display: flex; 
+  margin-bottom: 0px;
+  margin-top: 2px;}
   .form-group .form-wrapper {
     width: 50%; }
 
 .form-wrapper {
-  margin-bottom: 2%; }
+  margin-bottom: 0%; }
   .form-wrapper label {
-    margin-bottom: 1%;
+    margin-bottom: 0%;
 	font-family: "Muli-Bold"; 
 	}
 
@@ -115,67 +117,28 @@ button {
   width: 90%;
   height: 40px;
   margin: auto;
-  margin-bottom: 5px;
-  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-top: 2vh;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  background: #ae3c33;
-  font-size: 13px;
+  background: #008CBA;
+  font-size: 11px;
   color: #fff;
   text-transform: uppercase;
   font-family: "Muli-SemiBold";
-  border-radius: 20px;
-  overflow: hidden;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
+  border-radius: 20px;  
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  position: relative;
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s; }
-  button:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #f11a09;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transform-origin: 0 50%;
-    transform-origin: 0 50%;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out; }
-  button:hover:before {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66); }
-
-#calculate_button{
-  background: #1aa109;
-}
-#calculate_button:before {
-  background: #18c00c;
-}
+  position: relative;}
 
 #install_button{
-  background: #0969a1;
-  margin-top: 0px;
+  background: #4da109;
   width: 95%;
 }
 #install_button:before{
-  background: #4696ff;
+  background: #5fb129;
 }
 
 
