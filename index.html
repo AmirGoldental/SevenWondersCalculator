@@ -108,7 +108,7 @@
 						App</button>
 				</div>
 				<div class="form-wrapper">
-					<label for="" align="center">Version 6.04!</label>
+					<label for="" align="center">Version 6.05!</label>
 				</div>
 			</form>
 		</div>
@@ -182,6 +182,10 @@
 	// This code gets executed when the back button is clicked, hide any/open modals.
 	$(window).on('popstate', function () {
 		$(".modal").modal('hide');
+	});
+
+	document.addEventListener("backbutton", function () {
+		$('.modal').modal('hide');
 	});
 </script>
 
