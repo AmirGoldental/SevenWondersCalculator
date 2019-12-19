@@ -11,16 +11,16 @@
 
 		gtag('config', 'G-VP91F0ETGP');
 	</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
 	<title>7 Wonders Calculator</title>
 	<link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico" />
 
 	<link rel="stylesheet" href="css/style.css">
-        
+
 	<link rel="manifest" href="manifest.json">
 	<link rel="apple-touch-icon" href="images/favicon.ico">
 
@@ -93,9 +93,10 @@
 					<div class="form-wrapper">
 						<button id="calculate_button" onclick="Calculate(); return false;">Calculate</button>
 					</div>
-			                <div class="form-wrapper">
-                                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Rules</button>
-		                 	</div>
+					<div class="form-wrapper">
+						<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+							data-target="#myModal">Rules</button>
+					</div>
 					<div class="form-wrapper">
 						<button onclick="ResetForm(); return false;">Reset Form</button>
 					</div>
@@ -110,77 +111,45 @@
 			</form>
 		</div>
 	</div>
-<div class="container">
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-body">
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
+	<div class="container">
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="images/rules4.png" alt="images/rules4.png">
-    </div>
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-body">
 
-    <div class="item">
-      <img src="images/rules1.png" alt="images/rules1.png">
-    </div>
+						<ul class="nav nav-tabs">
+							<li class="active"><a data-toggle="tab" href="#rules1">1</a></li>
+							<li><a data-toggle="tab" href="#rules2">2</a></li>
+							<li><a data-toggle="tab" href="#rules3">3</a></li>
+							<li><a data-toggle="tab" href="#rules3">4</a></li>
+						</ul>
 
-    <div class="item">
-      <img src="images/rules2.png" alt="images/rules2.png">
-    </div>
-  </div>
+						<div class="tab-content">
+							<div id="rules1" class="tab-pane fade in active">
+								<p><img src="images/rules1.png"></p>
+							</div>
+							<div id="rules2" class="tab-pane fade">
+								<p><img src="images/rules2.png"></p>
+							</div>
+							<div id="rules3" class="tab-pane fade">
+								<p><img src="images/rules3.png"></p>
+							</div>
+							<div id="rules4" class="tab-pane fade">
+								<p><img src="images/rules4.png"></p>
+							</div>
+						</div>
 
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-<ul class="nav nav-tabs">
-  <li class="active"><a data-toggle="tab" href="#rules1">1</a></li>
-  <li><a data-toggle="tab" href="#rules2">2</a></li>
-  <li><a data-toggle="tab" href="#rules3">3</a></li>
-  <li><a data-toggle="tab" href="#rules3">4</a></li>
-</ul>
-
-<div class="tab-content">
-  <div id="rules1" class="tab-pane fade in active">
-    
-    <p><img src="images/rules1.png"></p>
-  </div>
-  <div id="rules2" class="tab-pane fade">
-    <p><img src="images/rules2.png"></p>
-  </div>
-  <div id="rules3" class="tab-pane fade">
-    <p><img src="images/rules3.png"></p>
-  </div>
-  <div id="rules4" class="tab-pane fade">
-    <p><img src="images/rules4.png"></p>
-  </div>
-</div>
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      </div></div></div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 <script>
 
@@ -216,6 +185,17 @@
 			console.log('Sharing failed', error));
 		return false;
 	}
+	$('.tab-pane').on('click', function () {
+		console.log('JQUERT EVENT');
+		var next = jQuery('.nav-tabs > .active').next('li');
+		if (next.length) {
+			next.find('a').trigger('click');
+		} else {
+			jQuery('#myTabs a:first').tab('show');
+		}
+	});
+
+
 </script>
 
 </html>
