@@ -6,10 +6,10 @@ function Calculate() {
     var total_points = 0;
     var min_science = 9999;
     for (my_input_field of form_inputs) {
-        if (my_input_field.id == "Science") {
+        if (my_input_field.parentElement.parentElement.id == "Science") {
             min_science = Math.min(min_science, Number(my_input_field.value));
             total_points = total_points + Math.pow(Number(my_input_field.value), 2);
-            text += "\n" + my_input_field.id + ": " + my_input_field.value + "^2";
+            text += "\nScience: " + my_input_field.value + "^2";
         } else {
             total_points = total_points + Number(my_input_field.value);
             if (text == "") {
@@ -42,28 +42,6 @@ function ResetForm() {
     window.location.reload(false);
 }
 
-// Swipe on cards:
-$(".tab-pane").swipe({
-    swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-        if (direction == 'left') {
-            var next = jQuery('.nav-tabs > .active').next('li');
-            if (next.length) {
-                next.find('a').trigger('click');
-            } else {
-                jQuery('.nav-tabs a:first').tab('show');
-            }
-        }
-        if (direction == 'right') {
-            var next = jQuery('.nav-tabs > .active').prev('li');
-            if (next.length) {
-                next.find('a').trigger('click');
-            } else {
-                jQuery('.nav-tabs a:last').tab('show');
-            }
-        }
-    },
-    allowPageScroll: "vertical"
-});
 
 // SW:
 if ('serviceWorker' in navigator) {

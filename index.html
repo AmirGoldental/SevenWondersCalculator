@@ -76,19 +76,19 @@
 						<h4>Science!</h4>
 					</label>
 				</div>
-				<div class="form-group">
+				<div class="form-group" id="Science">
 					<div class="form-wrapper">
 						<label for="">Type A:</label>
-						<input type="number" class="form-control" id="Science" value=0 onfocus="this.value=''">
+						<input type="number" class="form-control" value=0 onfocus="this.value=''">
 
 					</div>
 					<div class="form-wrapper">
 						<label for="">Type B:</label>
-						<input type="number" class="form-control" id="Science" value=0 onfocus="this.value=''">
+						<input type="number" class="form-control" value=0 onfocus="this.value=''">
 					</div>
 					<div class="form-wrapper">
 						<label for="">Type C:</label>
-						<input type="number" class="form-control" id="Science" value=0 onfocus="this.value=''">
+						<input type="number" class="form-control" value=0 onfocus="this.value=''">
 					</div>
 				</div>
 				<div class="form-group">
@@ -151,6 +151,28 @@
 </body>
 <script>
 
+	// Swipe on cards:
+	$(".tab-pane").swipe({
+		swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+			if (direction == 'left') {
+				var next = jQuery('.nav-tabs > .active').next('li');
+				if (next.length) {
+					next.find('a').trigger('click');
+				} else {
+					jQuery('.nav-tabs a:first').tab('show');
+				}
+			}
+			if (direction == 'right') {
+				var next = jQuery('.nav-tabs > .active').prev('li');
+				if (next.length) {
+					next.find('a').trigger('click');
+				} else {
+					jQuery('.nav-tabs a:last').tab('show');
+				}
+			}
+		},
+		allowPageScroll: "vertical"
+	});
 
 </script>
 
