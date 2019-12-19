@@ -173,7 +173,12 @@
 		},
 		allowPageScroll: "vertical"
 	});
-
+	window.addEventListener('popstate', handleBackButton);
+	function handleBackButton(init) {
+		if ($('#myModal').hasClass('in')) {
+			window.history.pushState({}, '');
+		}
+	}
 </script>
 
 </html>
