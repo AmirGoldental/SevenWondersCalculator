@@ -37,7 +37,7 @@ function Calculate() {
     return false;
 }
 
-function Calculate() {
+function ShareApp() {
     var text = "Check out this cool app for 7 wonders! " + window.location.href;
     try {
         navigator.share({
