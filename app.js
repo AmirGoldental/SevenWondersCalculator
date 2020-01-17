@@ -22,6 +22,8 @@ function Calculate() {
     total_points = total_points + min_science * 7;
     text += "\nScience combo:" + min_science + "*7";
     text += "\nYou have: " + total_points + " points!"
+
+    text += "\n\nCheck out this cool app for 7 wonders!\n" + window.location.href;
     alert(text)
     try {
         navigator.share({
@@ -38,11 +40,11 @@ function Calculate() {
 }
 
 function ShareApp() {
-    var text = "Check out this cool app for 7 wonders! " + window.location.href;
+    var text = "Check out this cool app for 7 wonders!\n" + window.location.href;
     try {
         navigator.share({
             files: [],
-            title: 'My Points',
+            title: 'Share',
             text: text,
         }).then(() => console.log('Share was successful.')).catch((error) =>
             console.log('Sharing failed', error));
