@@ -33,6 +33,7 @@ a:hover {
   align-items: center;}
 
 .inner {
+  border-radius: 20px;
   height: auto;
   width: auto;
   max-width: 90%;
@@ -40,7 +41,7 @@ a:hover {
   margin: auto;
   padding-top: 0px;
   padding-bottom: 5px; 
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   }
   .inner h4 {
     font-size: 15px;
