@@ -37,6 +37,22 @@ function Calculate() {
     return false;
 }
 
+function Calculate() {
+    var text = "Check out this cool app for 7 wonders! " + window.location.href;
+    try {
+        navigator.share({
+            files: [],
+            title: 'My Points',
+            text: text,
+        }).then(() => console.log('Share was successful.')).catch((error) =>
+            console.log('Sharing failed', error));
+    }
+    catch (error) {
+        console.log('Sharing failed', error);
+    }
+    return false;
+}
+
 // Reset form:
 function ResetForm() {
     window.location.reload(false);
