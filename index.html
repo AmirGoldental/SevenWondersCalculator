@@ -15,7 +15,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
 
 	<meta charset="utf-8">
 	<title>7 Wonders Calculator</title>
@@ -33,10 +32,10 @@
 
 <body>
 
-	<div class="wrapper" style="background-image: url('images/BackGround.svg'); ">
+	<div class="wrapper" style="background-image: url('images/BackGround.webp'); ">
 		<div class="inner" align="center" id="Points">
 			<form action="">
-				<h3>Calculate your points:</h3>
+				<h3 style="margin-bottom: 5px;">Calculate your points:</h3>
 				<div class="form-wrapper">
 					<label for="">Points from coins (coins/3):</label>
 					<input type="number" class="form-control" id="Coins" value=0 onfocus="this.value=''">
@@ -72,8 +71,8 @@
 					</div>
 				</div>
 				<div class="form-wrapper">
-					<label for="" align="center">
-						<h4>Science!</h4>
+					<label for="" align="center" style="font-weight: bolder; font-size: 17px;">
+						Science!
 					</label>
 				</div>
 				<div class="form-group" id="Science">
@@ -103,11 +102,18 @@
 						<button onclick="ResetForm(); return false;">Reset<br>Form</button>
 					</div>
 				</div>
-				<div class="form-wrapper" style="display: none" name="install_button_div">
-					<button id="install_button" name="install_button" onclick="InatallClick(); return false;">Install
-						App</button>
+				<div class="form-group">
+					<div class="form-wrapper" style="display: none" name="install_button_div">
+						<button id="install_button" name="install_button"
+							onclick="InatallClick(); return false;">Install
+							App</button>
+					</div>
+					<div class="form-wrapper" onclick="ShareApp(); return false;"
+						style="margin-top: 15px; font-size: 15px; font-weight: bolder;">
+						<img src="images/share.svg" height="30px"> Share App
+					</div>
 				</div>
-				<div class="form-wrapper">
+				<div class="form-wrapper" style="display: none">
 					<label for="" align="center">Version 6.05!</label>
 				</div>
 			</form>
@@ -121,28 +127,12 @@
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-body">
-
-						<ul class="nav nav-tabs">
-							<li class="active"><a data-toggle="tab" href="#rules1">1</a></li>
-							<li><a data-toggle="tab" href="#rules2">2</a></li>
-							<li><a data-toggle="tab" href="#rules3">3</a></li>
-						</ul>
-
-						<div class="tab-content">
-							<div id="rules1" class="tab-pane fade in active">
-								<p><img src="images/rules1.png"></p>
-							</div>
-							<div id="rules2" class="tab-pane fade">
-								<p><img src="images/rules2.png"></p>
-							</div>
-							<div id="rules3" class="tab-pane fade">
-								<p><img src="images/rules3.png"></p>
-							</div>
-						</div>
-
+						<p><img src="images/rules1.png"></p>
+						<p><img src="images/rules2.png"></p>
+						<p><img src="images/rules3.png"></p>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-default" onclick="window.history.back();">Close</button>
 					</div>
 				</div>
 			</div>
@@ -151,29 +141,7 @@
 </body>
 <script>
 
-	// Swipe on cards:
-	$(".tab-pane").swipe({
-		swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-			if (direction == 'left') {
-				var next = jQuery('.nav-tabs > .active').next('li');
-				if (next.length) {
-					next.find('a').trigger('click');
-				} else {
-					jQuery('.nav-tabs a:first').tab('show');
-				}
-			}
-			if (direction == 'right') {
-				var next = jQuery('.nav-tabs > .active').prev('li');
-				if (next.length) {
-					next.find('a').trigger('click');
-				} else {
-					jQuery('.nav-tabs a:last').tab('show');
-				}
-			}
-		},
-		allowPageScroll: "vertical"
-	});
-
+	// Add entry in history so back button does not close app
 	$(".modal").on("shown.bs.modal", function () {
 		var urlReplace = "#" + $(this).attr('id');
 		history.pushState(null, null, urlReplace);
@@ -183,7 +151,6 @@
 	$(window).on('popstate', function () {
 		$(".modal").modal('hide');
 	});
-
 	document.addEventListener("backbutton", function () {
 		$('.modal').modal('hide');
 	});

@@ -1,25 +1,11 @@
-@font-face {
-  font-family: "Muli-Regular";
-  src: url("../fonts/Muli-Regular.ttf"); }
-@font-face {
-  font-family: "Muli-SemiBold";
-  src: url("../fonts/Muli-SemiBold.ttf"); }
-@font-face {
-  font-family: "Muli-Bold";
-  src: url("../fonts/Muli-Bold.ttf"); }
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
 body {
-  font-family: "Muli-Regular";
   color: rgb(43, 43, 43);
+  font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 13px;
   margin: 0; }
 
 input, textarea, select, button {
-  font-family: "Muli-Regular";
+  font-family: "Comic Sans MS", cursive, sans-serif;
   color: rgb(31, 31, 31);
   font-size: 13px; }
 
@@ -53,22 +39,14 @@ a:hover {
   max-height: 90%;
   margin: auto;
   padding-top: 0px;
-  padding-bottom: 0px; 
+  padding-bottom: 5px; 
   background-color: rgba(255, 255, 255, 0.5);
   }
   .inner h4 {
     font-size: 15px;
-    font-family: "Muli-Bold";
+    font-family: "Comic Sans MS", cursive, sans-serif;
     text-align: center;
     margin-top: 3%;
-    color: #333;
-    letter-spacing: 2px; }
-  .inner h3 {
-    text-transform: uppercase;
-    font-size: 22px;
-    font-family: "Muli-Bold";
-    text-align: center;
-    margin-bottom: 3%;
     color: #333;
     letter-spacing: 2px; }
 
@@ -88,7 +66,7 @@ form {
   margin-bottom: 0%; }
   .form-wrapper label {
     margin-bottom: 0%;
-	font-family: "Muli-Bold"; 
+    font-family: "Comic Sans MS", cursive, sans-serif;
 	}
 
 .form-control {
@@ -98,8 +76,8 @@ form {
   height: 40px;
   padding: 0 0;
   border-radius: 20px;
-  text-align:center;
-  font-family: "Muli-Bold"; }
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif; }
   .form-control:focus {
     border: 1px solid #ae3c33; }
 
@@ -128,18 +106,26 @@ button {
   font-size: 12px;
   color: #fff;
   text-transform: uppercase;
-  font-family: "Muli-SemiBold";
+  font-family: "Comic Sans MS", cursive, sans-serif;
   border-radius: 20px;  
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   position: relative;}
 
-#install_button{
-  background: #4da109;
-  width: 95%;
-}
-#install_button:before{
-  background: #5fb129;
-}
+  #install_button{
+    background: #4da109;
+    width: 95%;
+  }
+  #install_button:before{
+    background: #5fb129;
+  }
+  #share_button{
+    opacity: 90%;
+    background: #09a188;
+    width: 95%;
+  }
+  #share_button:before{
+    background: #29a8b1;
+  }
 
 
 form {
