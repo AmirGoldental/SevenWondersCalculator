@@ -1,11 +1,60 @@
 
 // Calculate:
+function updateTotal() {
+    var form_inputs = document.getElementsByClassName("form-control");
+    var total_points = 0;
+    var min_science = 9999;
+    var science_points = 0;
+
+    for (var my_input_field of form_inputs) {
+        if (my_input_field.id === "TotalPoints") continue;
+        var value = Number(my_input_field.value) || 0;
+
+        if (my_input_field.parentElement.parentElement.id == "Science") {
+            min_science = Math.min(min_science, value);
+            science_points += Math.pow(value, 2);
+        } else if (my_input_field.id == "Coins") {
+            total_points += Math.floor(value / 3);
+        } else {
+            total_points += value;
+        }
+    }
+
+    // Add science points
+    total_points += science_points + (min_science * 7);
+
+    document.getElementById("TotalPoints").value = total_points;
+}
+
+// Call updateTotal when the page loads
+window.addEventListener('load', updateTotal);
+
+// Add event listeners to all input fields
+window.addEventListener('load', function() {
+    var form_inputs = document.getElementsByClassName("form-control");
+    for (var input of form_inputs) {
+        if (input.id !== "TotalPoints") {
+            input.addEventListener('input', updateTotal);
+        }
+    }
+});
+
+function ResetForm() {
+    var form_inputs = document.getElementsByClassName("form-control");
+    for (var input of form_inputs) {
+        input.value = 0;
+    }
+    updateTotal();
+}
+
 function Calculate() {
     var text = "";
     var form_inputs = document.getElementsByClassName("form-control");
     var total_points = 0;
     var min_science = 9999;
     for (my_input_field of form_inputs) {
+        if (my_input_field.id === "TotalPoints") continue;
+
         if (my_input_field.parentElement.parentElement.id == "Science") {
             min_science = Math.min(min_science, Number(my_input_field.value));
             total_points = total_points + Math.pow(Number(my_input_field.value), 2);
