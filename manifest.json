@@ -2,49 +2,49 @@
     "name": "7 Wonders Calculator",
     "prefer_related_applications": false,
     "short_name": "SevenWonders",
-    "start_url": "index.html",
+    "start_url": "SevenWondersCalculator/index.html",
     "display": "standalone",
     "background_color": "#049BDA",
     "theme_color": "#049BDA",
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "images/pyramid16.png",
+            "src": "SevenWondersCalculator/images/pyramid16.png",
             "type": "image/png",
             "sizes": "16x16"
         },
         {
-            "src": "images/pyramid24.png",
+            "src": "SevenWondersCalculator/images/pyramid24.png",
             "type": "image/png",
             "sizes": "24x24"
         },
         {
-            "src": "images/pyramid32.png",
+            "src": "SevenWondersCalculator/images/pyramid32.png",
             "type": "image/png",
             "sizes": "32x32"
         },
         {
-            "src": "images/pyramid64.png",
+            "src": "SevenWondersCalculator/images/pyramid64.png",
             "type": "image/png",
             "sizes": "46x64"
         },
         {
-            "src": "images/pyramid128.png",
+            "src": "SevenWondersCalculator/images/pyramid128.png",
             "type": "image/png",
             "sizes": "128x128"
         },
         {
-            "src": "images/pyramid192.png",
+            "src": "SevenWondersCalculator/images/pyramid192.png",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "images/pyramid256.png",
+            "src": "SevenWondersCalculator/images/pyramid256.png",
             "type": "image/png",
             "sizes": "256x256"
         },
         {
-            "src": "images/pyramid512.png",
+            "src": "SevenWondersCalculator/images/pyramid512.png",
             "type": "image/png",
             "sizes": "512x512"
         }
