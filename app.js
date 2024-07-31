@@ -59,6 +59,9 @@ function Calculate() {
             min_science = Math.min(min_science, Number(my_input_field.value));
             total_points = total_points + Math.pow(Number(my_input_field.value), 2);
             text += "\nScience: " + my_input_field.value + "^2";
+        }  else if (my_input_field.id == "Coins") {
+          total_points += Math.floor(Number(my_input_field.value) / 3);
+          text += "Points from coins: " +  String(Math.floor(Number(my_input_field.value) / 3));
         } else {
             total_points = total_points + Number(my_input_field.value);
             if (text == "") {
@@ -69,7 +72,7 @@ function Calculate() {
         }
     }
     total_points = total_points + min_science * 7;
-    text += "\nScience combo:" + min_science + "*7";
+    text += "\nScience combo: " + min_science + "*7";
     text += "\nYou have: " + total_points + " points!"
 
     text += "\n\nCheck out this cool app for 7 wonders!\n" + window.location.href;
