@@ -118,52 +118,57 @@ if ('serviceWorker' in navigator) {
 }
 
 // install button:
+
 let deferredPrompt = null;
 
-function InatallClick() {
-    try {
-        // Show the prompt
-        deferredPrompt.prompt();
-        // Wait for the user to respond to the prompt
-        deferredPrompt.userChoice
-            .then((choiceResult) => {
-                if (choiceResult.outcome === 'accepted') {
-                    console.log('User accepted the A2HS prompt');
-                } else {
-                    console.log('User dismissed the A2HS prompt');
-                }
-                deferredPrompt = null;
-            });
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  showInstallButton();
+});
 
-    } catch (error) {
-        console.log(error)
+function showInstallButton() {
+  const installButtonDiv = document.querySelector('[name="install_button_div"]');
+  if (installButtonDiv) {
+    installButtonDiv.style.display = 'block';
+  }
+}
+
+function InstallClick() {
+  if (!deferredPrompt) {
+    console.log('Can\'t install the app, no prompt available');
+    return;
+  }
+
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then((choiceResult) => {
+    if (choiceResult.outcome === 'accepted') {
+      console.log('User accepted the install prompt');
+    } else {
+      console.log('User dismissed the install prompt');
     }
+    deferredPrompt = null;
+    hideInstallButton();
+  });
+}
 
+function hideInstallButton() {
+  const installButtonDiv = document.querySelector('[name="install_button_div"]');
+  if (installButtonDiv) {
+    installButtonDiv.style.display = 'none';
+  }
 }
 
 window.addEventListener('load', function () {
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-        console.log('app runs in standalone mode');
-        document.getElementsByName("install_button_div")[0].style.display = "none";
-    } else {
-        console.log('app runs in browser');
-        document.getElementsByName("install_button_div")[0].style.display = "block";
+  if (window.matchMedia('(display-mode: standalone)').matches) {
+    console.log('app runs in standalone mode');
+    hideInstallButton();
+  } else {
+    console.log('app runs in browser');
+    if (deferredPrompt) {
+      showInstallButton();
     }
-})
-
-window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent Chrome 67 and earlier from automatically showing the prompt
-    e.preventDefault();
-    // Stash the event so it can be triggered later.
-    deferredPrompt = e;
-    // Show install button:
-    window.addEventListener('load', function () {
-        if (window.matchMedia('(display-mode: standalone)').matches) {
-            console.log('app runs in standalone mode');
-            document.getElementsByName("install_button_div")[0].style.display = "none";
-        } else {
-            console.log('app runs in browser');
-            document.getElementsByName("install_button_div")[0].style.display = "block";
-        }
-    })
+  }
 });
+
+
